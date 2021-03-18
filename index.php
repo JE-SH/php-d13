@@ -9,22 +9,34 @@
 <body>
 <h1>Intro PHP</h1>
 
-<!--
-    <ul>
-   < ?php
-        /*       
-        for($i=0;$i<5;$i++)
-        {
-            echo "<li>Registro $i</li>";
-        }
-        */
-    ?>
-</ul>
--->
-<form>
-<label for"tarea">Nombre de tarea</label><br>
-<input type="text" name="tarea">
-<br>
-</form>    
+<form method "POST">
+    <label for"tarea">Nombre de tarea</label><br>
+    <input type="text" name="tarea">
+    <br>
+    <label for"descripcion">Descripción</label><br>
+    <textarea name="descripcion" cols="38" rows="3"></textarea>
+    <br>
+    <label for"prioridad">Prioridad</label><br>
+    <select name="prioridad">
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+    </select>
+    <br>
+    <input type="checkbox" name="urgente" value="1">
+    <label for="urgente">Urgente</label>
+    <br>
+
+    <input type="radio" name="tipo" value="escuela">
+    <label for"tipo">Escuela</label><br>
+
+    <input type="radio" name="tipo" value="trabajo">
+    <label for"tipo">Trabajo</label><br>
+    <input type="submit" value="Enviar">
+</form>  
+<hr>
+<h2>Datos enviados</h2>  
+
+
 </body>
 </html>
