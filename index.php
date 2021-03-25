@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+ include('conexion.php');
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +12,7 @@
 <body>
 <h1>Intro PHP</h1>
 
-<form method "POST">
+<form method= "POST">
     <label for"tarea">Nombre de tarea</label><br>
     <input type="text" name="tarea">
     <br>
@@ -33,10 +36,8 @@
     <input type="radio" name="tipo" value="trabajo">
     <label for"tipo">Trabajo</label><br>
     <input type="submit" value="Enviar">
-</form>  
-<hr>
-<h2>Datos enviados</h2>  
 
+</form>  
 
 </body>
 </html>
