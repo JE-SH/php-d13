@@ -10,7 +10,7 @@ if(!empty($_POST['tarea'])){
     $tipo =$_POST['tipo'];
     $prioridad =$_POST['prioridad'];
     
-    $sql ="INSERT INTO tareas (tarea, descripcion, urgente, tipo, prioridad) VALUES ('$tarea', '$descripcion', '$urgente', '$tipo', '$prioridad')";
+    $sql ="INSERT INTO tareas (tarea, descripcion, urgente, tipo, prioridad) VALUES ('$tarea','$descripcion','$urgente','$tipo','$prioridad')";
 
     $conn->exec($sql);
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
- include('conexion.php');
+    include('conexion.php');
 ?>
 <html lang="es">
 <head>
@@ -12,7 +12,7 @@
 <body>
 <h1>Intro PHP</h1>
 
-<form method= "POST">
+<form action="store.php" method= "POST">
     <label for"tarea">Nombre de tarea</label><br>
     <input type="text" name="tarea">
     <br>
@@ -36,6 +36,26 @@
     <input type="radio" name="tipo" value="trabajo">
     <label for"tipo">Trabajo</label><br>
     <input type="submit" value="Enviar">
+
+    <hr>
+    <?php
+        $sql = "SELECT *FROM tareas";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        //set the resulting array
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        echo"<table border='1'>";
+        echo"<tr><th>ID</th> <th>Nombre</th><th>Descripcion</th></tr>";
+        foreach($stmt->fetchAll() as $tarea){
+            echo "<tr>
+                <td>" . $tarea['id'] . "</td>
+                <td>" . $tarea['tarea']. "</td>
+                <td>" . $tarea['descripcion'] . "</td>
+                </tr>";
+        }
+    ?>
 
 </form>  
 
